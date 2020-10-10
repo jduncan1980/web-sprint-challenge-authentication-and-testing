@@ -25,12 +25,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+   JWT are stateless, because no information regarding the token is stored on the server. Sessions, however, require the server to store the session data, either in a file or a database table. This can lead to issues with scalability, as the client needs to connect to the same server that initially sent the cookie, whereas with JWT, it is much easier to scale with new servers, as they will all have the necessary information to decode the token.
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+   Bcrypt is a password hash creator which incorporates a 'salt' (a random phrase mixed in with the password) to prevent rainbow table attacks. The idea behind it is that it allows you to choose the number of rounds to perform the hashing. Older hashing functions were designed to compute the hash as rapidly as possible, but as tech got faster, this meant that they weren't as secure. Bcrypt works around this by allowing you to add additional hash cycles.
 
 3. How are unit tests different from integration and end-to-end testing.
+   Unit tests are designed to test a single function of code, Integration tests are for testing how those functions work together, and E2E testing is for testing how the app will actually be used by the user.
 
 4. How _Test Driven Development_ changes the way we write applications and tests.
+   TDD forces us to think differently about how the code is written. By writing the tests first and then getting them to pass, it forces you to write smaller, more decoupled chunks of code. it It also makes future development of large projects more stable, and allows for easier debugging.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
